@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Tutorial svn e principi della condivisione del codice">
+	<meta name="keywords" content="svn, code sharing, condivisione del codice, svn booklet guide, responsabile repository svn">
+	<meta name="author" content="Igor Ravasi">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		
+		<title>Manualetto SVN</title>
+		
+	</head>
+	<body>
+	<div class="centering">
+		<h2>Manualetto SVN</h2>
+		<p class="sign">a cura di Igor Ravasi</p>
+		<br/><br/>
+		
+	</div>
+	<!-- <div style="width:20%; float:left"> -->
+	<div class="menu-div affiancato">
+		MENU MENU MENU MENU MENU
+		MENU MENU MENU MENU MENU
+		MENU MENU MENU MENU MENU
+		MENU MENU MENU MENU MENU
+		MENU MENU MENU MENU MENU
+		MENU MENU MENU MENU MENU
+	</div>
+	<!-- <div style="width:80%;float:left"> -->
+	<div class="main-div affiancato">
+		<p>
+			Per navigare tra le pagine usa i pusalnti avanti e indietro oppure clicca sul menu laterale.
+		</p>
+		<div>
+		
+			<br/><br/><span class="titoletto">VERSIONING e CONDIVISIONE  DI CODICE</span><br/><br/>
+					
+			
+			
+			<p>Quando si lavora ad un progetto software seguendo lo sviluppo <span class="highlighted"> incrementale ed iterativo </span>
+			ci si trova per l'appunto a seguire continui cicli di sviluppo per integrare nuove funzionalità o modificare quelle già integrate secondo nuove specifiche.
+			<br/> 
+			Lo sviluppo incrementale ed iterativo favorisce la partecipazione dell'utente-cliente allo sviluppo stesso, questo avviene tramite i "rilasci" (deployment).
+			<br/>
+			
+			In pratica l'utente e il team decidono un gruppo di funzionalità che vanno implementate per prime, dopodichè gli sviluppatori implementano queste funzionalità ad una ad una, seguendo un'iterazione ('ciclo breve') per ogniuna di esse. Al termine di ogni iterazione si genera una nuova versione del software. Quando si sono implementate tutte le funzionalità del gruppo come sempre viene generata una nuova versione, ma questa versione viene anche rilasciata, cioè resa a disposizione dell'utente.
+			Sulla base della versione di rilascio l'utente e il team si riaccordano su quali siano le prossime funzionalità da implementare e se alcune specifiche precedenti vanno cambiate.
+			</p>
+			<div class="scenetta">
+			<p>
+				Nasce quindi il concetto di <span class="highlighted">versioning</span>:
+				<br/><br/>
+				Il versioning  è l'organizzazione delle versioni successive di un progetto con etichette univoche per consentire l'identificazione. 
+				Le versioni sono progressive e catalogate ad una ad una e reperibili singolarmente tramite appositi strumenti, identificandole tramite etichetta.
+				<br/>
+				Esistono inoltre due tipi importanti di versioni: le versioni di rilascio, cioè i prototipi resi disponibili all'utente, e le versioni di sviluppo, le quali vengono utilizzate solamente dal team software.
+				<br/><br/>
+				In conclusione si necessita pertanto di uno strumento di versioning.
+			</p>
+			</div>
+			<br/>
+			Questo scenario però considera che un progetto vada avanti "in serie" e non in parallelo, ma non è il caso più frequente. Infatti nella realtà spesso si lavora in team e quando si lavora in gruppo allo stesso progetto ci si trova a <span class="highlighted">condividere il codice</span>.<br/>
+			<br/>
+			<div class="scenetta">
+			<p>	
+				La programmazione modulare ad oggetti è intrinsecamente di aiuto alla condivisone di codice, infatti gli addetti al lavoro possono ridistribuirsi il lavoro, cioè ognuno si occupa di moduli diversi <br/>
+				<span class="highlighted">MA</span> questo non basta a condividere il codice, infatti la condivisione è qualcosa di meno superficiale del dividersi semplicemente i compiti.<br/>
+			
+				Si ha la condivisione di codice quando <span class="highlighted">tutti</span> possono accedere a qualsiasi frammento di codice del progetto in qualsiasi momento e hanno la possibilità di fare modifiche e correggere errori.<br/>
+				
+				In conclusionemsi necessita di uno strumento che permetta di condividere il codice, cioè di rendere disponibile a tutti gli sviluppatori la versione più recente (ed anche le altre) del progetto e renderne possibile la modifica.<br/>
+			</p>
+			</div>
+			
+				
+			<br/><br/><span class="titoletto">LINEE GUIDA DI CONDIVISIONE DEL CODICE</span><br/><br/>
+			
+			<p>Linea guida principale è il rilascio frequente: durante una giornata di lavoro ogni sviluppatore dovrebbe generare anche fino a decine di versioni di sviluppo. Con questo non si fa riferimento alla quantità di codice prodotto ma solo alla frequenza con cui viene reso disponibile al team. Idealmente ad ogni ciclo breve si dovrebbe dare luogo ad una nuova versione di sviluppo.<br/>
+			
+			Ogni sviluppatore oltre che scrivere codice deve periodicamente dedicare tempo a <span class="highlighted">documentarsi</span> sul lavoro degli altri: prendere atto delle modifiche / aggiunte apportate al codice e soprattutto comprenderlo.<br/>
+			
+			Il <span class="highlighted">rilascio frequente</span> è estremamente importante per garantire una maggiore visibilità del codice scritto da altri e mette chiunque nelle condizioni di intervenire su di esso.<br/>
+			E' da evitare assolutamente di rendere disponibile il codice all'intero team dopo ad aver prodotto un ingente numero di classi/linee di codice/metodi/modifiche, in quanto renderebbe molto difficile agli altri di capire il tutto sino ad arrivare anche a scoraggiare gli altri dal seguire la fase di documentazione del codice scritto da me.<br/>
+			</p>
+			
+			<br/><br/><span class="titoletto">STRUMENTI DI CONDIVISIONE DEL CODICE</span><br/><br/> 
+			
+			<p>
+			Visti i principi e le linee guida di condivisione del codice è lecito porsi alcuni dubbi.<br/>
+			
+			</p>
+			<p>Come si fa a condividere il codice? Ovvero:<br/>
+			</p>
+			<div class="scenetta">
+				dove deve essere collocato "fisicamente" il codice per essere disponibile a tutti?<br/>
+				come si fa una volta apportata una modifica al codice a renderla disponibile agli altri?<br/>
+			</div>		
+			<p>Tenendo conto che, come detto, la condivisione contempla la possibilità di lavorare in più persone allo stesso blocco di codice può verificarsi il problema delle <span class="highlighted">versioni concorrenti</span>, cioè per esempio:<br/>
+			</p>
+			<div class="scenetta">
+				Nello stesso arco di tempo programmatore 1 e programmatore 2 di un team software fanno le seguenti modifiche.<br/>
+				Programmatore 1 aggiunge una funzionalità a una classe X.<br/>
+				Programmatore 2 modifica la classe X per risolvere un bug.	<br/>
+			
+				Programmatore 1  e programmatore 2 vogliono rendere disponibili le proprie modifiche a tutti.<br/> 
+			</div>	
+			
+			<p>Quale versione deve essere quella messa in condivisione?<br/>
+			Come si può convergere ad una unica versione senza perdere nessuna delle modifiche?<br/>
+			</p>
+			
+			<p>Vediamo come e con quali strumenti si risponde alle precedenti domande.<br/>
+			
+			Il codice viene "depositato" in un <span class="highlighted">repository</span> (deposito). Per rendere disponibile il codice a tutti i repository richiedono l'uso di connessioni di rete e il repository viene posto in una locazione di rete disponibile a tutti i membri del team.<br/>
+			Ognuno di essi ha a disposizione una propria utenza per dialogare con il repository.<br/>
+			
+			Infatti il repository offre una interfaccia di comunicazione che permette ai membri di utilizzarla per eseguire operazioni che alterino il contenuto dei file depositati, creando nuove versioni.<br/>
+			</p>
+			<br/><br/><span class="titoletto">COME CONDIVIDERE IL CODICE</span><br/><br/>
+			
+			<p>Lo schema generale delle funzionalità dei repository, che risponde al primo gruppo di domande è il seguente:<br/>
+			</p>
+			
+			<p>Il repository si trova su un <span class="highlighted">server remoto</span>, accessibile da tutti i membri, con macchine locali e contiene file, di qualsiasi tipo, ma è indicato soprattutto per file testuali.<br/>
+			</p><p>
+			Il repository all'inizio è vuoto e l'interfaccia di comunicazione che fornisce permette di eseguire un'operazione (add/upload) per "inizializzare" il contenuto del repository, partendo da dati di una posizione locale.<br/>
+			</p><p>
+			Il repository consente di recuperare il suo contenuto e crearne una copia sulla macchina locale.<br/>
+			</p><p>
+			Il repository permette di aggiornare il contenuto del repository stesso con gli aggiornamenti dei contenuti di una macchina locale.<br/>
+			</p><p>
+			Il repository permette di aggiornare anche nella direzione opposta, cioè aggiornare la copia locale con la versione più recente dei dati remoti.<br/>
+			</p><p>
+			Il repository permette anche la <span class="highlighted">sincronizzazione</span> tra copia locale e remota, per monitorare i cambiamenti e le disallineature tra una versione locale ed una remota.<br/>
+			</p>
+			
+			<br/><br/><span class="titoletto">COME GESTIRE IL PROBLEMA DELLE VERSIONI CONCORRENTI</span><br/><br/>
+			
+			Per rispondere al secondo gruppo di domande riprendiamo l'esempio di prima.<br/>
+			
+			<div class="scenetta">
+				Nello stesso arco di tempo programmatore 1 e programmatore 2 di un team software fanno le seguenti modifiche.<br/>
+				Programmatore 1 aggiunge una funzionalità a una classe X.<br/>
+				Programmatore 2 modifica la classe X per risolvere un bug.	<br/>
+			
+				Programmatore 1  e programmatore 2 vogliono rendere disponibili le proprie modifiche a tutti.<br/> 
+			</div>	
+			<p>
+			Programmatore 1 e programmatore 2 cercheranno di interfacciarsi al repository richiedendo un aggiornamento che modifichi il contenuto remoto sulla base delle modifiche locali.<br/>
+			</p>
+			<p>Inevitabilmente uno dei due (o più) programmatori richiederà per primo l'operazione in questione all'interfaccia del repository, e il respoitory la soddisferà. <br/>
+			Il secondo arrivato si troverà a star per alterare il contenuto di una versione remota più recente di quella su cui stava lavorando (di cui dispone in locale). 
+			</p>
+			<p>A questo punto il sistema del repository può prendere due strade:<br/>
+			
+			-Tenta un <span class="highlighted">merge</span>, cioè prova ad unire le modifiche, in modalità automatica. Ovviamente però non è sempre possibile (dipende dall'entità delle modifiche delle versioni concorrenti)<br/>
+			-Se il merge non riesce allora il sistema non soddisfa la richiesta e segnala un <span class="highlighted">conflitto</span>. A questo punto è il "secondo arrivato" che, sincronizzando prima le versioni, prende atto delle modifiche apportato dal primo programmatore e le mescola manualmente alle sue. Per poi riprovare ad aggiornare il contenuto remoto con quello locale.<br/>
+			</p>
+			
+			
+			<br/><br/><span class="titoletto">SISTEMI DI CONTROLLO DI VERSIONE: SVN e GLOSSARIO</span><br/><br/>
+			
+			<p>SVN è un sistema di controllo di versione, che mette a disposizione tutto quanto quello che abbiamo visto. I comandi che infatti analizzeremo sono disponibili anche su altri sistemi di controllo di versione.<br/>
+			
+			
+			Vediamo come SVN e altri sistemi di controllo versione chiamano quanto già visto.<br/>
+			</p>
+			
+			
+			SVN: E' un abbreviazione di Subversion, il nome del noto sistema di controllo di versione di cui parliamo. Prende nome di svn anche l'applicativo lato client del sistema subversion.<br/> 
+			
+			Working copy: è la copia del repository mantenuta in locale. E' su questa copia che l'utente applica le modifiche, per poi renderle disponibili al repository centrale quando sono ultimate.<br/>
+			
+			Revisione: Ogni aggiornamento dettato al repository rappresenta una nuova revisione (corrisponde al concetto di versione). Svn applica ad ogni revisione un numero identificativo incrementale. E' con questo numero identificativo che si può reperire una determinata revisione.<br/>
+			
+			
+			Add: E' il comando che permette di inizializzare il repository con dei dati locali.<br/>
+			
+			Commit: E' il comando che permette di aggiornare il repository remoto con i dati della working copy.<br/>
+			
+			Update: E' il comando che aggiorna la working copy allineandola alla copia centraliizzata.<br/>
+			
+			Synchronize: E' il comando che controlla le differenze e le modifiche tra la working copy e la copia remota.<br/> 
+			
+			Checkout: E' il comando che permette di creare una working copy in locale, partendo da una revisione presente nel repository. Un membro del team la utilizza specialmente quando inizia a lavorare al progetto, in quanto non ancora in possesso di una working copy con e sul quale eseguire update/commit/synchronize<br/>
+			
+			Tag: Si traduce con etichetta. Quando si vuole fare un rilascio, cioè rendere disponibile anche al ciente/utente una revisione se ne crea una copia e le si assegna un tag (esempio: "versione alpha" opppure "milestone 01").<br/> 
+			
+			Branches: Si traduce con "rami". Ovvero quando vanno aggiunte grosse funzionalità con il quale si può procedere in parallelo all'implementazione di altre funzionalità, lavorando su copie diverse e poi unendole viene copiata la revisione attuale in un branch, e diversi gruppi del team lavorano su diversi branch (anche la copia "principale" può considerarsi un branch: il branch master). Quando lo sviluppo su di un ramo è completato si fa un merge e tutto confluisce sul master.<br/>
+			
+			<br/><br/><span class="titoletto">CONSIDERAZIONI SU DIVERSI SISTEMI DI CONTROLLO DI VERSIONE</span><br/><br/>
+			
+			<p>
+			<span class="highlighted">CVS</span><br/>
+			Concurrent Version System. E' il primo vero strumento ad essere nato per il Controllo Condiviso delle versioni. E' con CVS che si è introdotta la pratica della Condivisione di progetto e quasi tutti gli altri sistemi adottano buona parte dei meccanismi di CVS.<br/>
+			</p>
+			<p>
+			<span class="highlighted">SVN</span><br/>
+			Subversion.  E' considerato come il successore di CVS e lo "eredita" quasi completamente. Ci sono novità e cambiamenti, tra i principali:<br/>
+			</p>
+			<ul>
+			<li> Ogni directory è a sua volta un repository svn</li><br/>
+			<li> I commit sono diventate delle operazioni atomiche, cioè non esistono commit lasciati a metà. Una volta che il commit è iniziato deve finire correttamente, e se questo non accade il repository torna allo stato esatto in cui era prima dell'inizio del commit.</li><br/>
+			</ul>
+			
+			<p>
+			<span class="highlighted">GIT</span><br/>
+			Mantiene in locale un clone del repository remoto, portando come vantaggio quello di accelerare i tempi di commit ed update. Ma questo istiga a non condividere il codice con il repository centrale e quindi con gli altri membri del team.<br/>
+			In conclusione, per quanto efficiente, lo si può prendere in considerazione più come strumento di versioning che non di condivisione di codice.<br/>
+			</p>
+			
+			<br/><br/><span class="titoletto">RESPONSABILE SVN</span><br/><br/>
+			
+			<p>
+			All'interno di un progetto software del corso di Fondamenti di Informatica II (Facoltà di Ingegneria, Università di Pavia) mi sono occupato del ruolo "Responsabile del Repository SVN e del suo utilizzo"	<br/>
+			</p>
+			<p>
+			Innanzitutto bisogna <span class="highlighted">creare</span> il repository. Personalmente, siccome i membri del team dovevano poter lavorare da casa, a qualsiasi ora volessero, e non disponendo noi di un computer/server con ip pubblico 24/24 7/7, ho sfruttato il servizio gratuito offerto da GitHub, il quale fornisce servizi git e svn, con l'unica clausola che il codice è visibile da tutti.<br/> 
+			Si deve anche <span class="highlighted">inizializzare</span> il repository, o con codice già presente in locale, o altrimenti si può inizializzare vuoto o con file col solo scopo di inizializzare il progetto.
+			<br/>			
+			Dopo aver creato il repository il responsabile deve creare gli account di accesso al repository per i membri (se gestisce direttamente il server) o dare i permessi necessari alle utenze dei membri, qualora siano già disponibili o sono create direttamente dagli utenti (come su GitHub).<br/> 
+			
+			Dopodichè si procede con l'istruire i membri sull'utilizzo del repository, qualora non abbiamo mai condiviso codice, e sull'indirizzo al quale il ramo master è collocato, per poi procedere con il checkout. E' infatti con il checkout che ogni membro istanzia una working copy sulla propria macchina locale.<br/>
+			</p>
+			<p>
+			Queste sono le <span class="highlighted">istruzioni</span> che un responsabile svn dovrebbe dare e continuare a ricordare ai membri del team:<br/>
+			</p>
+			<ul>
+			<li><p>
+			Committare frequentemente! Come già detto committare frequentemente espone il codice committato a maggiore visibilità e si da una grossa spinta agli membri nel documentarsi sulle ultime modifiche (in quanto di piccola entità numerica) e si ottiene anche una maggiore comprensibilità.<br/>
+			</p></li>
+			<li><p>	
+			Ad ogni commit inserire anche un <span class="highlighted">commento</span>, nel quale si fa riferimento a quali file /package sono stati "toccati" (modificati, aggiunti, rimossi, spostati); si spiegano le funzionalità introdotte o modificate, se la modifica è dovuta a una correzione di bug, se la modifica è minore cioè cambiano solo valori oppure sono modificate linee di codice di poco conto), se la modifica non apporta cambiamenti nel comportamneto ma solo nella codifica cioè refactoring, le motivazioni (per quanto riguarda allo spostamento o al refactoring). Nel caso in cui la versione committata introduca novità ma anche problemi COMUNICARE i problemi, ci penseranno altre menti "esterne" a risolverlo se ne sono capaci.<br/> 
+			</p></li>
+			
+			<li><p>Non fare <span class="highlighted">mai</span> update o commit <span class="highlighted">senza prima fare synchronize</span>. La procedura ben accettata è:<br/>
+			</p>
+				<br/><div class="scenetta">
+				<ol> 
+				<li>Sincronizzare l'intero progetto.</li><br/> 
+				<li> Se la working copy e la head revision risultano completamente allineate allora possiamo procedere al commit.</li><br/>
+				<li> Altrimenti documentiamoci sul lavoro effettuato dagli altri e prendiamo in considerazione se committare subito i file che non sono stati toccati da altri o se dobbiamo rivedere le modifiche fatte, a causa di dipendenze.</li><br/> 
+				<li> Facciamo l'update dei file non modificati da noi ma dagli altri</li><br/>
+				<li> Se abbiamo deciso di committarli committiamo i file modificati solo da noi, altrimenti rimodificarli.</li><br/>
+				<li> Se alcuni files risultano in conflitto (modificati da noi e da altri) analizziamo le modifiche applicate al repository e proviamo, se possibile (e serve ancora), a fare un merge manuale delle modifiche per poi committare.</li><br/>
+				<li> Rifare un synchronize per controllare che gli update, commit, merge and commit siano andati a buon fine, devono cioè risutlare allineate la working copy e la revisione su repository.</li><br/>
+				</ol>
+				</div>
+				<br/>
+			</li>
+			
+			<li><p>
+			Non fare mai "override and update" se non quando, a seguito di un problema di verisoni concorrenti ci accorgiamo che le modifiche fatte da altri hanno reso inutili le proprie.<br/>
+			</p></li>
+			<li><p>
+			Non fare <span class="highlighted">mai</span> "<span class="highlighted">override</span> and commit" se non quando si è effettuato, con piena coscienza, un merge manuale.<br/>
+			</p></li>
+			<li><p>
+			Se dopo a un synchronize (dopo il quale volevamo fare commit o update) ci prendiamo una pausa o andiamo in bagno quando si torna rifare il synchronize!<br/> 
+			</p></li>
+			<li>Quando si riprende a lavorare a inizio "turno" o dopo un commit per aggiungere funzionalità etc. etc. fare un bel synchronize prima di fare un update e controllare, se ci sono, le modifiche effettuate da altri membri del gruppo: cercare di comprenderne il funzionamento e cosa è cambiato (sulla base anche dei commenti). Comprendere i cambiamenti che interessano ciò che dobbiamo implementare noi (esempio: cambio di tipo di restituzione da metodi di classi, cambio di istanziazione di oggetti dal quale intendavamo far dipendere delle nostre classi etc.) .<br/>
+			Se non capiamo qualcosa <span class="highlighted">chiedere</span> al diretto sviluppatore!<br/>
+			</li>
+			<li><p>
+			Quando si lavora nello stesso ambiente fisico <span class="highlighted">comunicarsi vocalmente</span> quando si fa un commit, soprattutto se importante: la tecnologia del controllo di versione è comoda, la gestione dei conflitti pure, fare synchronize prima del commit anche, ma avere la comunicazione vocale ancora di più! Se so che un mio collega sta committando aspetto 10 secondi a committare, mi ricordo di fare synchronize e prendo atto delle sue modifiche. Se non capisco qualcosa glielo chiedo e poi procedo con il mio commit / merge manuale.<br/>
+			</p>
+			</li>
+			</ul>
+			<p>
+			Quando tutti seguono le regole d'oro pronunciate il responsabile SVN si sente sollevato<br/>
+			
+			Quando invece qualcuno non rispetta le regole il responsabile non dovrebbe alterarsi ma mantenere la calma, provvedere a effettuare controlli su eventuali conflitti "bypassati" e reistruire il membro che ha sgarrato.<br/>
+			
+			Quando bisogna ritornare sui passi precedenti il responsabile svn (ma sarebbe meglio tutti) deve essere capace di ripristinare il repository al contenuto di una revisione precedente. Basta specificare come argomento dell'update il numero di revisione, o l'etichetta, al quale si vuole ripristinare.<br/>
+			
+			Un responsabile svn si auspica che gli "svn commit" e gli "svn tag" vengano eseguiti al fine di ogni iterazione (rispettivamente ciclo breve e ciclo lungo) come nell'immagine sottostante.<br/>
+			</p>
+			<div class="centering"><img src="resources/sviluppo.png"/></div>
+			
+			
+			
+			<br/><br/><span class="titoletto">BIBLIOGRAFIA</span><br/><br/>
+			
+			<ul>
+			<li> Lezioni in aula e dispense fornite dal prof. <a target="blank" href="http://ingegneria.unipv.it/servizi/scheda.php?mat=023764">A.Martinelli</a> - Docente di Fondamenti di Informatica II presso la facoltà di Ingegneria dell'Università di Pavia - <a class="titololink" target="blank" href="http://robot.unipv.it/robolab-website/courses/14-fondamenti-di-informatica-ii"></a>
+			</li>			
+			
+			
+			
+			<li>Articolo su blog di Simone Carletti - <a class="titololink"  target="blank" href="http://simonecarletti.it/blog/2007/03/strumenti-di-sviluppo-subversion-svn/"> </a>
+			</li>
+			
+			
+			<li>Esperienza personale ottenuta nel corso dei Progetti di Fondamenti di Informatica II presso la facoltà di Ingegneria dell'Università di Pavia - <a class="titololink" target="blank"  href="https://github.com/igorravasi/Memo"></a>			
+			</li>
+			
+			</ul>
+				
+		</div>	
+		
+	</div>
+
+
+	</body>
+</html>

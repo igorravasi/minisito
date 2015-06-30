@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+body{
+	font-family: 'helvetica neue',arial,sans-serif;
+	background: #CBDFFF;
+}
+
+h2{
+	font-size:2.5em;
+}
+img{
+	margin:auto
+}
+
+.centering{
+	text-align:center;
+	margin:auto
+}
+
+.affiancato{
+	float:left;
+}
+
+.menu-div{
+	width:20%;
+	
+}
+
+.main-div{
+	width:76%;
+	padding:0% 2%;
+	text-align:justify;
+}
+
+
+.sign{
+	font-style: italic;
+	font-family: "Monotype Corsiva", cursive;
+	font-size:2em;
+}
+
+.titoletto{
+    color:orange;
+    background-color:grey;
+    font-size:1.3em;
+    padding:0.2em 2em;
+	
+	font-weight: bold;
+}
+
+.highlighted{
+    font-variant:small-caps;
+    text-shadow: 1px 1px 1px orange;
+}
+
+.scenetta{
+	background-color:rgba(88, 88, 0, 0.2);
+	padding:0.2em 0.6em;
+}
+
+.titololink[href]:after { content:"("attr(href)")"; 
+}
