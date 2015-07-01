@@ -16,7 +16,8 @@ public class ServerLauncher {
 	public static String PORT_NUMBER_IDENTIFIER = "port_number";
 	
 	public static void main(String[] args) {
-		
+
+		System.err.println("server script started");
 		HttpMemoServer server = new HttpMemoServer();
 		
 		int port = Integer.parseInt(MemoServerConfigurator.getInstance().getValue(PORT_NUMBER_IDENTIFIER));

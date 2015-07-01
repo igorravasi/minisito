@@ -17,23 +17,45 @@
 		<br/><br/>
 		
 	</div>
-	<!-- <div style="width:20%; float:left"> -->
+	
+	<a name="top"></a>
 	<div class="menu-div affiancato">
-		MENU MENU MENU MENU MENU
-		MENU MENU MENU MENU MENU
-		MENU MENU MENU MENU MENU
-		MENU MENU MENU MENU MENU
-		MENU MENU MENU MENU MENU
-		MENU MENU MENU MENU MENU
+		<ul class="menu">
+			<li>
+				<a href="#0">VERSIONING e CONDIVISIONE  DI CODICE</a>
+			</li>
+			<li>
+				<a href="#1">LINEE GUIDA DI CONDIVISIONE DEL CODICE</a>
+			</li>
+			<li>
+				<a href="#2">STRUMENTI DI CONDIVISIONE DEL CODICE</a>
+			</li>
+			<li>
+				<a href="#3">COME CONDIVIDERE IL CODICE</a>
+			</li>
+			<li>
+				<a href="#4">COME GESTIRE IL PROBLEMA DELLE VERSIONI CONCORRENTI</a>
+			</li>
+			<li>
+				<a href="#5">SISTEMI DI CONTROLLO DI VERSIONE: SVN e GLOSSARIO</a>
+			</li>
+			<li>
+				<a href="#6">CONSIDERAZIONI SU DIVERSI SISTEMI DI CONTROLLO DI VERSIONE</a>
+			</li>
+			<li>
+				<a href="#7">RESPONSABILE SVN</a>
+			</li>
+			<li>
+				<a href="#8">BIBLIOGRAFIA</a>
+			</li>
+		</ul>
 	</div>
-	<!-- <div style="width:80%;float:left"> -->
+	
 	<div class="main-div affiancato">
-		<p>
-			Per navigare tra le pagine usa i pusalnti avanti e indietro oppure clicca sul menu laterale.
-		</p>
+		
 		<div>
 		
-			<br/><br/><span class="titoletto">VERSIONING e CONDIVISIONE  DI CODICE</span><br/><br/>
+			<br/><br/><a name="0"></a><span class="titoletto">VERSIONING e CONDIVISIONE  DI CODICE</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 					
 			
 			
@@ -73,7 +95,7 @@
 			</div>
 			
 				
-			<br/><br/><span class="titoletto">LINEE GUIDA DI CONDIVISIONE DEL CODICE</span><br/><br/>
+			<br/><br/><a name="1"></a><span class="titoletto">LINEE GUIDA DI CONDIVISIONE DEL CODICE</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			<p>Linea guida principale è il rilascio frequente: durante una giornata di lavoro ogni sviluppatore dovrebbe generare anche fino a decine di versioni di sviluppo. Con questo non si fa riferimento alla quantità di codice prodotto ma solo alla frequenza con cui viene reso disponibile al team. Idealmente ad ogni ciclo breve si dovrebbe dare luogo ad una nuova versione di sviluppo.<br/>
 			
@@ -83,7 +105,7 @@
 			E' da evitare assolutamente di rendere disponibile il codice all'intero team dopo ad aver prodotto un ingente numero di classi/linee di codice/metodi/modifiche, in quanto renderebbe molto difficile agli altri di capire il tutto sino ad arrivare anche a scoraggiare gli altri dal seguire la fase di documentazione del codice scritto da me.<br/>
 			</p>
 			
-			<br/><br/><span class="titoletto">STRUMENTI DI CONDIVISIONE DEL CODICE</span><br/><br/> 
+			<br/><br/><a name="2"></a><span class="titoletto">STRUMENTI DI CONDIVISIONE DEL CODICE</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			<p>
 			Visti i principi e le linee guida di condivisione del codice è lecito porsi alcuni dubbi.<br/>
@@ -116,7 +138,7 @@
 			
 			Infatti il repository offre una interfaccia di comunicazione che permette ai membri di utilizzarla per eseguire operazioni che alterino il contenuto dei file depositati, creando nuove versioni.<br/>
 			</p>
-			<br/><br/><span class="titoletto">COME CONDIVIDERE IL CODICE</span><br/><br/>
+			<br/><br/><a name="3"></a><span class="titoletto">COME CONDIVIDERE IL CODICE</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			<p>Lo schema generale delle funzionalità dei repository, che risponde al primo gruppo di domande è il seguente:<br/>
 			</p>
@@ -134,7 +156,7 @@
 			Il repository permette anche la <span class="highlighted">sincronizzazione</span> tra copia locale e remota, per monitorare i cambiamenti e le disallineature tra una versione locale ed una remota.<br/>
 			</p>
 			
-			<br/><br/><span class="titoletto">COME GESTIRE IL PROBLEMA DELLE VERSIONI CONCORRENTI</span><br/><br/>
+			<br/><br/><a name="4"></a><span class="titoletto">COME GESTIRE IL PROBLEMA DELLE VERSIONI CONCORRENTI</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			Per rispondere al secondo gruppo di domande riprendiamo l'esempio di prima.<br/>
 			
@@ -158,7 +180,7 @@
 			</p>
 			
 			
-			<br/><br/><span class="titoletto">SISTEMI DI CONTROLLO DI VERSIONE: SVN e GLOSSARIO</span><br/><br/>
+			<br/><br/><a name="5"></a><span class="titoletto">SISTEMI DI CONTROLLO DI VERSIONE: SVN e GLOSSARIO</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			<p>SVN è un sistema di controllo di versione, che mette a disposizione tutto quanto quello che abbiamo visto. I comandi che infatti analizzeremo sono disponibili anche su altri sistemi di controllo di versione.<br/>
 			
@@ -188,15 +210,15 @@
 			
 			Branches: Si traduce con "rami". Ovvero quando vanno aggiunte grosse funzionalità con il quale si può procedere in parallelo all'implementazione di altre funzionalità, lavorando su copie diverse e poi unendole viene copiata la revisione attuale in un branch, e diversi gruppi del team lavorano su diversi branch (anche la copia "principale" può considerarsi un branch: il branch master). Quando lo sviluppo su di un ramo è completato si fa un merge e tutto confluisce sul master.<br/>
 			
-			<br/><br/><span class="titoletto">CONSIDERAZIONI SU DIVERSI SISTEMI DI CONTROLLO DI VERSIONE</span><br/><br/>
+			<br/><br/><a name="6"></a><span class="titoletto">CONSIDERAZIONI SU DIVERSI SISTEMI DI CONTROLLO DI VERSIONE</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			<p>
-			<span class="highlighted">CVS</span><br/>
-			Concurrent Version System. E' il primo vero strumento ad essere nato per il Controllo Condiviso delle versioni. E' con CVS che si è introdotta la pratica della Condivisione di progetto e quasi tutti gli altri sistemi adottano buona parte dei meccanismi di CVS.<br/>
+			<span class="highlighted label">CVS (Cuncurrent Version System)</span><br/><br/>
+			E' il primo vero strumento ad essere nato per il Controllo Condiviso delle versioni. E' con CVS che si è introdotta la pratica della Condivisione di progetto e quasi tutti gli altri sistemi adottano buona parte dei meccanismi di CVS.<br/>
 			</p>
 			<p>
-			<span class="highlighted">SVN</span><br/>
-			Subversion.  E' considerato come il successore di CVS e lo "eredita" quasi completamente. Ci sono novità e cambiamenti, tra i principali:<br/>
+			<span class="highlighted label">SVN (Subversion)</span><br/><br/>
+			E' considerato come il successore di CVS e lo "eredita" quasi completamente. Ci sono novità e cambiamenti, tra i principali:<br/>
 			</p>
 			<ul>
 			<li> Ogni directory è a sua volta un repository svn</li><br/>
@@ -204,12 +226,12 @@
 			</ul>
 			
 			<p>
-			<span class="highlighted">GIT</span><br/>
+			<span class="highlighted label">GIT</span><br/><br/>
 			Mantiene in locale un clone del repository remoto, portando come vantaggio quello di accelerare i tempi di commit ed update. Ma questo istiga a non condividere il codice con il repository centrale e quindi con gli altri membri del team.<br/>
 			In conclusione, per quanto efficiente, lo si può prendere in considerazione più come strumento di versioning che non di condivisione di codice.<br/>
 			</p>
 			
-			<br/><br/><span class="titoletto">RESPONSABILE SVN</span><br/><br/>
+			<br/><br/><a name="7"></a><span class="titoletto">RESPONSABILE SVN</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			<p>
 			All'interno di un progetto software del corso di Fondamenti di Informatica II (Facoltà di Ingegneria, Università di Pavia) mi sono occupato del ruolo "Responsabile del Repository SVN e del suo utilizzo"	<br/>
@@ -275,11 +297,12 @@
 			
 			Un responsabile svn si auspica che gli "svn commit" e gli "svn tag" vengano eseguiti al fine di ogni iterazione (rispettivamente ciclo breve e ciclo lungo) come nell'immagine sottostante.<br/>
 			</p>
-			<div class="centering"><img src="resources/sviluppo.png"/></div>
+			<div class="centering"><a href="resources/sviluppo.png"><img src="resources/sviluppo.png"/></a>
+			</div>
 			
 			
 			
-			<br/><br/><span class="titoletto">BIBLIOGRAFIA</span><br/><br/>
+			<br/><br/><a name="8"></a><span class="titoletto">BIBLIOGRAFIA</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			<ul>
 			<li> Lezioni in aula e dispense fornite dal prof. <a target="blank" href="http://ingegneria.unipv.it/servizi/scheda.php?mat=023764">A.Martinelli</a> - Docente di Fondamenti di Informatica II presso la facoltà di Ingegneria dell'Università di Pavia - <a class="titololink" target="blank" href="http://robot.unipv.it/robolab-website/courses/14-fondamenti-di-informatica-ii"></a>
@@ -295,7 +318,8 @@
 			</li>
 			
 			</ul>
-				
+			<br/>
+			<br/>
 		</div>	
 		
 	</div>

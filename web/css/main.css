@@ -58,5 +58,20 @@ img{
 	padding:0.2em 0.6em;
 }
 
+.label{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
 .titololink[href]:after { content:"("attr(href)")"; 
+}
+.toplink, .toplink:visited, .toplink:active{
+   
+  
+   text-decoration:none;
+   
+}
+
+.toplink:hover{
+	 border:1px solid orange;
 }
