@@ -19,7 +19,7 @@ img{
 
 .affiancato{
 	float:left;
-}
+} 
 
 .menu-div{
 	width:20%;
@@ -68,8 +68,38 @@ ul{
 	padding-left:1em;
 }
 
-ul.menu{
+ol.menu{
+	background-color:rgba(88, 88, 0, 0.2);
 	list-style-type:none;
+    margin: 0;
+    text-align:center;
+    padding: 0;
+    border:1px solid orange;
+}
+
+
+.menu li{
+	font-variant:small-caps;
+	padding:0.5em;
+	border:1px solid;
+	color:orange;	
+}
+
+.menu li:hover{
+	
+	border:1px solid;
+	background-color:orange;
+	color:black;
+}
+
+.menu li a{
+
+	color:black;;	
+}
+
+.menu li a:hover{
+	
+	color:black;
 }
 ul.elenco{
 	list-style-image: url('../resources/java_mini.png');
@@ -79,7 +109,7 @@ ul.elenco{
 
 .titololink[href]:after { content:"("attr(href)")"; 
 }
-.toplink, .toplink:visited, .toplink:active{
+.toplink, .toplink:visited, .toplink:active, .menu a, .menu a:active, .menu a:visited, .menu a:hover{
    
   
    text-decoration:none;
