@@ -1,8 +1,11 @@
 @CHARSET "UTF-8";
 
 body{
-	font-family: 'helvetica neue',arial,sans-serif;
+	font-family: 'helvetica neue', arial, sans-serif;
 	background: #CBDFFF;
+	padding:0;
+	margin:0;
+	width:100%;
 }
 
 h2{
@@ -18,19 +21,24 @@ img{
 }
 
 .affiancato{
-	float:left;
 } 
 
-.menu-div{
-	width:20%;
+.menu-div, .main-div{
+	
+	padding-top:3em;
 	
 }
 
 .main-div{
-	width:76%;
-	padding:0% 2%;
+	
 	text-align:justify;
+	
 }
+
+.main-div div{
+	padding:0em 5em;
+}
+
 
 
 .sign{
@@ -121,3 +129,21 @@ ul.elenco{
 }
 
 
+
+
+@media only screen and (min-width: 1024px){
+	.affiancato{
+		float:left;
+	}
+	
+	.main-div{
+		width:76%;
+		padding:0% 2%; 
+		
+	}
+	
+	.menu-div{
+		width:20%;
+	}
+
+}
