@@ -174,9 +174,11 @@
 			Il secondo arrivato si troverà a star per alterare il contenuto di una versione remota più recente di quella su cui stava lavorando (di cui dispone in locale). 
 			</p>
 			<p>A questo punto il sistema del repository può prendere due strade:<br/>
-			
-			-Tenta un <span class="highlighted">merge</span>, cioè prova ad unire le modifiche, in modalità automatica. Ovviamente però non è sempre possibile (dipende dall'entità delle modifiche delle versioni concorrenti)<br/>
-			-Se il merge non riesce allora il sistema non soddisfa la richiesta e segnala un <span class="highlighted">conflitto</span>. A questo punto è il "secondo arrivato" che, sincronizzando prima le versioni, prende atto delle modifiche apportato dal primo programmatore e le mescola manualmente alle sue. Per poi riprovare ad aggiornare il contenuto remoto con quello locale.<br/>
+			<ul><li>
+			Tenta un <span class="highlighted">merge</span>, cioè prova ad unire le modifiche, in modalità automatica. Ovviamente però non è sempre possibile (dipende dall'entità delle modifiche delle versioni concorrenti)<br/>
+			</li><li>Se il merge non riesce allora il sistema non soddisfa la richiesta e segnala un <span class="highlighted">conflitto</span>. A questo punto è il "secondo arrivato" che, sincronizzando prima le versioni, prende atto delle modifiche apportato dal primo programmatore e le mescola manualmente alle sue. Per poi riprovare ad aggiornare il contenuto remoto con quello locale.<br/>
+			</li>
+			</ul>
 			</p>
 			
 			
@@ -188,28 +190,38 @@
 			Vediamo come SVN e altri sistemi di controllo versione chiamano quanto già visto.<br/>
 			</p>
 			
-			
-			SVN: E' un abbreviazione di Subversion, il nome del noto sistema di controllo di versione di cui parliamo. Prende nome di svn anche l'applicativo lato client del sistema subversion.<br/> 
-			
-			Working copy: è la copia del repository mantenuta in locale. E' su questa copia che l'utente applica le modifiche, per poi renderle disponibili al repository centrale quando sono ultimate.<br/>
-			
-			Revisione: Ogni aggiornamento dettato al repository rappresenta una nuova revisione (corrisponde al concetto di versione). Svn applica ad ogni revisione un numero identificativo incrementale. E' con questo numero identificativo che si può reperire una determinata revisione.<br/>
-			
-			
-			Add: E' il comando che permette di inizializzare il repository con dei dati locali.<br/>
-			
-			Commit: E' il comando che permette di aggiornare il repository remoto con i dati della working copy.<br/>
-			
-			Update: E' il comando che aggiorna la working copy allineandola alla copia centraliizzata.<br/>
-			
-			Synchronize: E' il comando che controlla le differenze e le modifiche tra la working copy e la copia remota.<br/> 
-			
-			Checkout: E' il comando che permette di creare una working copy in locale, partendo da una revisione presente nel repository. Un membro del team la utilizza specialmente quando inizia a lavorare al progetto, in quanto non ancora in possesso di una working copy con e sul quale eseguire update/commit/synchronize<br/>
-			
-			Tag: Si traduce con etichetta. Quando si vuole fare un rilascio, cioè rendere disponibile anche al ciente/utente una revisione se ne crea una copia e le si assegna un tag (esempio: "versione alpha" opppure "milestone 01").<br/> 
-			
-			Branches: Si traduce con "rami". Ovvero quando vanno aggiunte grosse funzionalità con il quale si può procedere in parallelo all'implementazione di altre funzionalità, lavorando su copie diverse e poi unendole viene copiata la revisione attuale in un branch, e diversi gruppi del team lavorano su diversi branch (anche la copia "principale" può considerarsi un branch: il branch master). Quando lo sviluppo su di un ramo è completato si fa un merge e tutto confluisce sul master.<br/>
-			
+			<ul class="elenco">
+			<li>
+			<span class="label">SVN:</span><br/></span><br/>E' un abbreviazione di Subversion, il nome del noto sistema di controllo di versione di cui parliamo. Prende nome di svn anche l'applicativo lato client del sistema subversion.<br/> 
+			</li><br/>
+			<li>
+			<span class="label">Working copy:</span><br/> è la copia del repository mantenuta in locale. E' su questa copia che l'utente applica le modifiche, per poi renderle disponibili al repository centrale quando sono ultimate.<br/>
+			</li><br/>
+			<li>
+			<span class="label">Revisione:</span><br/> Ogni aggiornamento dettato al repository rappresenta una nuova revisione (corrisponde al concetto di versione). Svn applica ad ogni revisione un numero identificativo incrementale. E' con questo numero identificativo che si può reperire una determinata revisione.<br/>
+			</li><br/>
+			<li>
+			<span class="label">Add:</span><br/> E' il comando che permette di inizializzare il repository con dei dati locali.<br/>
+			</li><br/>
+			<li>
+			<span class="label">Commit:</span><br/> E' il comando che permette di aggiornare il repository remoto con i dati della working copy.<br/>
+			</li><br/>
+			<li>
+			<span class="label">Update:</span><br/> E' il comando che aggiorna la working copy allineandola alla copia centraliizzata.<br/>
+			</li><br/>
+			<li>
+			<span class="label">Synchronize:</span><br/> E' il comando che controlla le differenze e le modifiche tra la working copy e la copia remota.<br/> 
+			</li><br/>
+			<li>
+			<span class="label">Checkout:</span><br/> E' il comando che permette di creare una working copy in locale, partendo da una revisione presente nel repository. Un membro del team la utilizza specialmente quando inizia a lavorare al progetto, in quanto non ancora in possesso di una working copy con e sul quale eseguire update/commit/synchronize<br/>
+			</li><br/>
+			<li>
+			<span class="label">Tag:</span><br/> Si traduce con etichetta. Quando si vuole fare un rilascio, cioè rendere disponibile anche al ciente/utente una revisione se ne crea una copia e le si assegna un tag (esempio:</span><br/> "versione alpha" opppure "milestone 01").<br/> 
+			</li><br/>
+			<li>
+			<span class="label">Branches:</span><br/> Si traduce con "rami". Ovvero quando vanno aggiunte grosse funzionalità con il quale si può procedere in parallelo all'implementazione di altre funzionalità, lavorando su copie diverse e poi unendole viene copiata la revisione attuale in un branch, e diversi gruppi del team lavorano su diversi branch (anche la copia "principale" può considerarsi un branch:</span><br/> il branch master). Quando lo sviluppo su di un ramo è completato si fa un merge e tutto confluisce sul master.<br/>
+			</li><br/>
+			</ul>
 			<br/><br/><a name="6"></a><span class="titoletto">CONSIDERAZIONI SU DIVERSI SISTEMI DI CONTROLLO DI VERSIONE</span> <a class="toplink titoletto" href="#top">&#8593;</a><br/><br/>
 			
 			<p>

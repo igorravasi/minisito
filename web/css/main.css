@@ -63,6 +63,19 @@ img{
 	text-decoration:underline;
 }
 
+ul{
+	list-style-type:circle;
+	padding-left:1em;
+}
+
+ul.menu{
+	list-style-type:none;
+}
+ul.elenco{
+	list-style-image: url('../resources/java_mini.png');
+	padding-left:3em;
+}
+
 .titololink[href]:after { content:"("attr(href)")"; 
 }
 .toplink, .toplink:visited, .toplink:active{
