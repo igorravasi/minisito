@@ -73,7 +73,8 @@ ul.menu{
 }
 ul.elenco{
 	list-style-image: url('../resources/java_mini.png');
-	padding-left:3em;
+	padding-left:2em;	
+
 }
 
 .titololink[href]:after { content:"("attr(href)")"; 
